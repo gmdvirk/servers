@@ -11,7 +11,24 @@ const path = require('path');
 const app = express();
 const port = 3001;
 
-app.use(cors({ origin: '*' }));
+app.use(cors({
+  origin: function(origin, callback) {
+      const allowedOrigins = [
+          'http://localhost:3001',
+          'http://localhost:3000',
+          'http://45.79.134.38:3001',
+          'http://45.79.134.38:3001/servers',
+          // Add other allowed origins here
+      ];
+      if (allowedOrigins.includes(origin) || !origin) {
+          callback(null, true);
+      } else {
+          callback(new Error('Not allowed by CORS'));
+      }
+  },
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
 app.use(express.json());
 let info={
   serverlist:[],
@@ -433,7 +450,6 @@ async function sendDiscordMessagesWithDelay() {
         let globalcheck=true
           for(let i=0;i<info.serverlist.length;i++){
             let resultglobal=await checkGlobalEvent(data1,info.serverlist[i])
-            console.log("f",resultglobal.length)
             if(resultglobal.length>0){
               i=info.serverlist.length
               globalcheck=false
@@ -465,7 +481,6 @@ async function sendDiscordMessagesWithDelay() {
             info.serverlist[index].check = "no response";
             allmeassages.push({...descordConfig, message: `Host ip ${obj.ipv4[0]} and Label : ${obj.label} didn't respond to test packet.`});
             if (!(isWithin60Minutes(obj.laststartup, getCurrentEpochTimestamp()))) {
-              console.log(obj.laststartup, getCurrentEpochTimestamp(),isWithin601Minutes(obj.laststartup, getCurrentEpochTimestamp()))
               info.serverlist[index].laststartup = getCurrentEpochTimestamp();
              
               await reboot({hostId: obj.ipv4[0], linodeId: obj.id});
