@@ -11,7 +11,7 @@ const path = require('path');
 const app = express();
 const port = 3001;
 
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 let info={
   serverlist:[],
