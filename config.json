@@ -1,0 +1,24 @@
+{
+    "descordconfig": {
+    "webhookUrl":"https://discord.com/api/webhooks/1276229921366081536/sRzu7lSKNYQNto2cqg6NbsfHpj14EM-CGDcgxzvwtYsPFMyI7GiMbMrttfdU7hYqL1Ul",
+    "threadId":"1280861284128260180"
+  },
+    "mysqlconnection":  {
+        "host": "test.intellio-dev.com",
+        "port": 3306,
+        "user": "onlyread",
+        "password": "}x{3S75DWQq6#",
+        "database": "ci_badge"
+      },
+      "token":"4fbd6f35046647701aebabba7f0aa8b75b2876e90ce41d3c8819a3329fb88bf0",
+      "testpacketconfig":{
+        "Eventnum": 0,
+        "BadgeId": "10",
+        "ReaderId": "10",
+        "Eventtype": 22,
+        "Timestamp":0
+      },
+      "globaltestpacketconfig":{
+        "Eventtype": 7
+      }
+}

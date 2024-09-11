@@ -3,25 +3,18 @@ const axios = require('axios');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
 const fetch = require('node-fetch');
-const Config = require('./config.json');
+const CONFIG = require('./config.json');
 const sqlite3 = require('sqlite3').verbose();
-const fs = require('fs').promises;
 const path = require('path');
 const app = express();
 const port = 3001;
-
-const tokenConfig = {token : Config.token};
-const dbConfig = Config.mysqlconnection;
-const descordConfig = Config.descordconfig;
 app.use(cors({
   origin: function(origin, callback) {
       const allowedOrigins = [
           'http://localhost:3001',
           'http://localhost:3000',
           'http://45.79.134.38:3001',
-          'http://45.79.134.38:3001/servers',
-          'http://localhost:3002',
-          'http://localhost:3002/servers',
+          'http://45.79.134.38:3001/servers'
           // Add other allowed origins here
       ];
       if (allowedOrigins.includes(origin) || !origin) {
@@ -38,42 +31,11 @@ let info={
   serverlist:[],
   timestamp:0,
 }
-// Function to write info to data.json
-async function writeInfoToJSON(info) {
-  try {
-    const jsonString = JSON.stringify(info, null, 2);
-    await fs.writeFile('data.json', jsonString, 'utf8');
-    console.log('Data successfully written to data.json');
-  } catch (error) {
-    console.error('Error writing to data.json:', error);
-    throw error;
-  }
-}
-
-// Function to read info from data.json
-async function readInfoFromJSON() {
-  try {
-    const jsonString = await fs.readFile('data.json', 'utf8');
-    const data = JSON.parse(jsonString);
-    console.log('Data successfully read from data.json');
-    return data;
-  } catch (error) {
-    if (error.code === 'ENOENT') {
-      console.log('data.json does not exist, returning default values');
-      return {
-        serverlist: [],
-        timestamp: 0
-      };
-    } else {
-      console.error('Error reading from data.json:', error);
-      throw error;
-    }
-  }
-}
 // Path to the SQLite database file
 const dbPath = path.join(__dirname, 'info.db');
 // Function to write info to the database
 function writeInfoToDatabase(info) {
+  //console.log('Attempting to write to database:', info);
   return new Promise((resolve, reject) => {
     const db = new sqlite3.Database(dbPath, (err) => {
       if (err) {
@@ -83,6 +45,7 @@ function writeInfoToDatabase(info) {
       }
 
       db.serialize(() => {
+        // Create the table if it doesn't exist
         db.run(`CREATE TABLE IF NOT EXISTS info (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           serverlist TEXT,
@@ -94,18 +57,14 @@ function writeInfoToDatabase(info) {
             return;
           }
 
+          // Insert or update the info
           const stmt = db.prepare(`INSERT OR REPLACE INTO info (id, serverlist, timestamp) VALUES (1, ?, ?)`);
-          const serverlistJSON = JSON.stringify(info.serverlist.map(server => ({
-            ...server,
-            lastcheckid: parseInt(server.lastcheckid) || 0
-          })));
-          
-          stmt.run(serverlistJSON, info.timestamp, (err) => {
+          stmt.run(JSON.stringify(info.serverlist), info.timestamp, (err) => {
             if (err) {
               console.error('Error inserting data:', err);
               reject(err);
             } else {
-              console.log('Data written successfully');
+              //console.log('Data written successfully');
               resolve();
             }
           });
@@ -174,7 +133,7 @@ async function processServerEvent(serverData, obj) {
   const { ...eventData } = serverData;
   const host = obj.ipv4[0];
   const { Eventnum, BadgeId, ReaderId, Eventtype, Timestamp } = serverData;
-  let tempdbconfig = { ...dbConfig, host: obj.ipv4[0] };
+  let tempdbconfig = { ...CONFIG.mysqlconnection, host: obj.ipv4[0] };
   
   if (!host) {
     return { error: 'Host is required in the request body' };
@@ -211,10 +170,9 @@ async function processServerEvent(serverData, obj) {
         obj.vEvent_type == Eventtype &&
         obj.vBadge_serial == BadgeId &&
         obj.vReader_serial == ReaderId &&
-        obj.iEvent_num == Eventnum 
-        // && isWithin15Minutes(getCurrentEpochTimestamp(),getEpochTimestampInSeconds(obj.dCreated_at))
+        obj.iEvent_num == Eventnum &&
+        isWithin15Minutes(getCurrentEpochTimestamp(),getEpochTimestampInSeconds(obj.dCreated_at))
     );
-// console.log(index)
     return [...index];
   } catch (error) {
     console.error('Error in processServerEvent:',error);
@@ -230,37 +188,28 @@ app.post('/api/checkEvent', async (req, res) => {
     Eventnum: 0,
     BadgeId: "10",
     ReaderId: "10",
-    Eventtype: "22",
+    Eventtype: 22,
     Timestamp: getCurrentEpochTimestamp()
   };
-  
   const {Eventnum,
     BadgeId,
     ReaderId,
     Eventtype,
     Timestamp}=data
     const {host}=req.body
-    let tempdbconfig=dbConfig
+    let tempdbconfig=CONFIG.mysqlconnection
     tempdbconfig.host=host
     const connection = await mysql.createConnection(tempdbconfig);
   
   try {
-    const url = `http://${host}/api/events/createEvent`;
-    const response = await axios.post(url, data, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
     const query = `
       SELECT * FROM events
       ORDER BY iId DESC
-      LIMIT 100
+      LIMIT 1000
     `;
-    console.log(Timestamp)
+   
     const [results] = await connection.query(query); // Use promise-based query
-    const index=results.filter((obj)=>obj.vEvent_type==Eventtype&&obj.vBadge_serial==BadgeId&&obj.vReader_serial==ReaderId&&obj.iEvent_num==Eventnum
-    // &&isWithin15Minutes(getCurrentEpochTimestamp(),getEpochTimestampInSeconds(obj.dCreated_at))
-  )
+    const index=results.filter((obj)=>obj.vEvent_type==Eventtype&&obj.vBadge_serial==BadgeId&&obj.vReader_serial==ReaderId&&obj.iEvent_num==Eventnum)
     res.json(index);
   } catch (error) {
     res.status(500).send(error.message);
@@ -291,8 +240,8 @@ readInfoFromDatabase()
   
 });
 async function checkGlobalEvent (serverData, obj) {
-  const { Eventtype } = serverData;
-  let tempdbconfig = { ...dbConfig, host: obj.ipv4[0] };
+  const { Eventnum, BadgeId, ReaderId, Eventtype, Timestamp } = serverData;
+  let tempdbconfig = { ...CONFIG.mysqlconnection, host: obj.ipv4[0] };
   let  connection=null
   
   try {
@@ -321,10 +270,9 @@ async function checkGlobalEvent (serverData, obj) {
   }
 }
 async function rebootglobal(){
-console.log("Print Globally")
+//console.log("Print Globally")
 }
 async function reboot(rebootdata){
-  console.log("calledrebbot")
   const { hostId,linodeId } = rebootdata;
   const url = `https://${hostId}/v4/linode/instances/${linodeId}/reboot`;
   
@@ -333,7 +281,7 @@ async function reboot(rebootdata){
     headers: {
       accept: 'application/json',
       'content-type': 'application/json',
-      authorization: `Bearer ${tokenConfig.token}`
+      authorization: `Bearer ${CONFIG.token}`
     }
   };
 
@@ -433,17 +381,11 @@ async function sendDiscordMessagesWithDelay() {
     await delay(10000); // Wait for 10 seconds
   }
 }
-function getObjectWithHighestId(arr) {
-  if (arr.length === 0) return null; // Return null if the array is empty
-
-  return arr.reduce((maxObj, currentObj) => {
-    return currentObj.iId > maxObj.iId ? currentObj : maxObj;
-  });
-}
-
  async function checkserverstatus() {
-  const data = Config.testpacketconfig
-    const data1 = Config.globaltestpacketconfig
+    let data=CONFIG.testpacketconfig
+    data.Timestamp= getCurrentEpochTimestamp()
+    let data1=CONFIG.globaltestpacketconfig
+    data.Timestamp= getCurrentEpochTimestamp()
     readInfoFromDatabase()
     .then((info1) => {
       //console.log('Info read from database:', info);
@@ -465,7 +407,7 @@ function getObjectWithHighestId(arr) {
         method: 'GET',
         headers: {
           accept: 'application/json',
-          authorization: `Bearer ${tokenConfig.token}`
+          authorization: `Bearer ${CONFIG.token}`
         }
       };
       try{
@@ -481,12 +423,12 @@ function getObjectWithHighestId(arr) {
       let tempindex=info.serverlist.findIndex((obj)=>obj.id===userData.data[i].id)
       if(tempindex!==-1){
         userData.data[i].laststartup=info.serverlist[tempindex].laststartup
-        userData.data[i].lastcheckid=info.serverlist[tempindex].lastcheckid
+
       }else{
         userData.data[i].laststartup=0
-        userData.data[i].lastcheckid=0
       }
         tempdata.push(userData.data[i])
+        
       }
     }
         info.serverlist=tempdata;
@@ -502,38 +444,30 @@ function getObjectWithHighestId(arr) {
           }
           if(globalcheck){
             rebootglobal()
-            allmeassages.push({...descordConfig,message:`No server responded for the global test packet`})
+            allmeassages.push({...CONFIG.descordconfig,message:`No server responded for the global test packet`})
           }else{
-            allmeassages.push({...descordConfig,message:`Global Test packet was received successfully from the servers`})
+            allmeassages.push({...CONFIG.descordconfig,message:`Global Test packet was received successfully from the servers`})
           }
       
         const serverChecks = info.serverlist.map(async (obj, index) => {
           let result = await processServerEvent(data, obj);
-          const id=getObjectWithHighestId(result)
-
-          if (result.length === 0 || (obj.lastcheckid && obj.lastcheckid>=id.iId)) {
-            allmeassages.push({...descordConfig, message: `Host ip ${obj.ipv4[0]} and Label : ${obj.label} didn't respond to test packet.`});
-            // info.serverlist[index].lastcheckid=id.iId
-            
+          if (result.length === 0) {
+            info.serverlist[index].check = "no response";
+            allmeassages.push({...CONFIG.descordconfig, message: `Host ip ${obj.ipv4[0]} and Label : ${obj.label} didn't respond to test packet.`});
             if (!(isWithin60Minutes(obj.laststartup, getCurrentEpochTimestamp()))) {
               info.serverlist[index].laststartup = getCurrentEpochTimestamp();
+             
               await reboot({hostId: obj.ipv4[0], linodeId: obj.id});
             }
           } else {
             info.serverlist[index].check = "success";
-            info.serverlist[index].lastcheckid=id.iId
-            allmeassages.push({...descordConfig, message: `Host ip ${obj.ipv4[0]} and Label : ${obj.label} responded successfully to test packet.`});
+            allmeassages.push({...CONFIG.descordconfig, message: `Host ip ${obj.ipv4[0]} and Label : ${obj.label} responded successfully to test packet.`});
           }
         });
     
         // Wait for all server checks to complete
         await Promise.all(serverChecks);
-        try {
-          await writeInfoToJSON(info);
-          console.log('Info written to JSON file');
-        } catch (err) {
-          console.error('Error writing to JSON file:', err);
-        }
+    
         writeInfoToDatabase(info)
         .then(() => {
           console.log('Info written to database')
@@ -541,7 +475,6 @@ function getObjectWithHighestId(arr) {
           )
         .catch(err => console.error('Error writing to database:', err));
         await sendDiscordMessagesWithDelay();
-        await delay(300000); // 10 minutes in milliseconds
         })
         .catch(err => console.error('error:' + err));
       }catch(e){

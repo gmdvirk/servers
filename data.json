@@ -1,0 +1,2096 @@
+{
+  "serverlist": [
+    {
+      "id": 38136657,
+      "label": "hackensack",
+      "group": "",
+      "status": "running",
+      "created": "2022-08-17T22:25:06",
+      "updated": "2024-09-11T02:43:54",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "66.228.42.110"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe86:afac/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Sunday",
+          "window": "W2"
+        },
+        "last_successful": "2024-09-11T02:36:34"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "60d6d3e11481d65831ae52a26ffb80a4c12d6c9c",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 9908947
+    },
+    {
+      "id": 38160133,
+      "label": "holycross",
+      "group": "",
+      "status": "running",
+      "created": "2022-08-18T22:54:09",
+      "updated": "2024-09-11T07:09:43",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "97.107.133.97"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:feb9:8a66/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W6"
+        },
+        "last_successful": "2024-09-11T06:47:22"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "385a64fa9e700322c8eb29fe5473046ec48289c6",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3779184
+    },
+    {
+      "id": 38181892,
+      "label": "mtsinai",
+      "group": "",
+      "status": "running",
+      "created": "2022-08-19T22:20:50",
+      "updated": "2024-09-11T07:02:29",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "173.255.235.151"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:feb9:21a4/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W6"
+        },
+        "last_successful": "2024-09-11T06:38:54"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "62f4fc11720a97a1cb891b8138c5ea8402f226ba",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3883985
+    },
+    {
+      "id": 38182373,
+      "label": "PMC",
+      "group": "",
+      "status": "running",
+      "created": "2022-08-19T23:01:46",
+      "updated": "2024-09-10T21:49:11",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.33.69.34"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:feb9:b44b/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W16"
+        },
+        "last_successful": "2024-09-10T16:43:13"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "b1d44b124c886bd567364659fbea1bd0c9783920",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 4780764
+    },
+    {
+      "id": 38200094,
+      "label": "pmceast",
+      "group": "",
+      "status": "running",
+      "created": "2022-08-20T19:50:18",
+      "updated": "2024-09-11T12:53:24",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.79.144.35"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:feb9:56a1/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W12"
+        },
+        "last_successful": "2024-09-11T12:42:21"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "24cf9bb5b03de26fd1d0f3f91d3f6ecf8623b8a1",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3856512
+    },
+    {
+      "id": 38201061,
+      "label": "schwab",
+      "group": "",
+      "status": "running",
+      "created": "2022-08-20T21:54:50",
+      "updated": "2024-09-11T04:49:01",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "192.155.90.188"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:feb9:cd30/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W4"
+        },
+        "last_successful": "2024-09-11T04:29:45"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "790ab62315cce7586d8db61f5281b266a5bf88e4",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3279267
+    },
+    {
+      "id": 39225416,
+      "label": "edgewood",
+      "group": "",
+      "status": "running",
+      "created": "2022-10-04T06:12:51",
+      "updated": "2024-09-11T12:12:37",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.79.135.19"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fedc:f25e/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W12"
+        },
+        "last_successful": "2024-09-11T12:06:53"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "e2889ccad4856cb0cd5e0c9c065adba821d9118a",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 6171008
+    },
+    {
+      "id": 40012063,
+      "label": "florence",
+      "group": "",
+      "status": "running",
+      "created": "2022-11-04T14:57:33",
+      "updated": "2024-09-11T09:33:48",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "97.107.140.202"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe78:987e/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W20"
+        },
+        "last_successful": "2024-09-10T20:41:24"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "71285c56e4dbbd3bd85ad3d6f9f56fae089eb9bd",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 4588489
+    },
+    {
+      "id": 41582210,
+      "label": "kalba",
+      "group": "",
+      "status": "running",
+      "created": "2023-01-11T15:34:07",
+      "updated": "2024-09-11T14:39:51",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "172.104.31.174"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fedd:72f7/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W14"
+        },
+        "last_successful": "2024-09-11T14:34:39"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "23fff7f596f043aba38e91fce19b92c66cebf926",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3351806
+    },
+    {
+      "id": 41856614,
+      "label": "ftthomas",
+      "group": "",
+      "status": "running",
+      "created": "2023-01-19T19:28:52",
+      "updated": "2024-09-11T11:28:15",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.79.186.139"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fed8:58d8/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Sunday",
+          "window": "W2"
+        },
+        "last_successful": "2024-09-11T02:45:25"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "6930a961a76ecd928525c9053b02e79dbe8256e4",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 4738755
+    },
+    {
+      "id": 42275260,
+      "label": "cooleydickenson",
+      "group": "",
+      "status": "running",
+      "created": "2023-02-02T13:50:06",
+      "updated": "2024-09-10T16:27:18",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "170.187.162.130"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe2b:735f/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-10T16:18:53"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "d9b4cc1f8cee477a3214eb49456e25d7e4ad99d6",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3265053
+    },
+    {
+      "id": 44213616,
+      "label": "uphealth",
+      "group": "",
+      "status": "running",
+      "created": "2023-03-21T15:57:51",
+      "updated": "2024-09-11T02:08:44",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "143.42.5.85"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe45:8235/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Sunday",
+          "window": "W2"
+        },
+        "last_successful": "2024-09-11T02:04:58"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "23e8a4aed85271291df5a3c53b48b47558b8c8bc",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3546677
+    },
+    {
+      "id": 44221990,
+      "label": "bayshore",
+      "group": "",
+      "status": "running",
+      "created": "2023-03-21T19:06:29",
+      "updated": "2024-09-10T22:50:24",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "170.187.164.164"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe45:398a/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-10T22:31:00"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "5cb5d4765a80f91aa8869ad9749f147885d7443f",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3293401
+    },
+    {
+      "id": 44270942,
+      "label": "southernocean",
+      "group": "",
+      "status": "running",
+      "created": "2023-03-22T18:54:30",
+      "updated": "2024-09-11T06:41:46",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.33.72.152"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe4d:5867/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T06:25:28"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "7ff6d0e1002167b022fa8b765ea9c682b0ad96a7",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 10908573
+    },
+    {
+      "id": 44271322,
+      "label": "palisades",
+      "group": "",
+      "status": "running",
+      "created": "2023-03-22T19:03:06",
+      "updated": "2024-09-11T00:42:23",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "143.42.183.244"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe4d:8f9a/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T00:32:13"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "366d8bacd1e8e32798304f5e80a86e4c07ff4ed1",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 14685900
+    },
+    {
+      "id": 44271384,
+      "label": "oldbridge",
+      "group": "",
+      "status": "running",
+      "created": "2023-03-22T19:04:06",
+      "updated": "2024-09-11T02:26:14",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "172.104.8.164"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe4d:5cdb/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T02:22:10"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "9e6ee3231dbfffc59b7c67658efdab00c6474ba0",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 7436026
+    },
+    {
+      "id": 44271409,
+      "label": "raritanbay",
+      "group": "",
+      "status": "running",
+      "created": "2023-03-22T19:04:32",
+      "updated": "2024-09-11T00:39:54",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "172.104.8.229"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe4d:5cd1/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T00:30:38"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "a8bb7be077759e1aa30fae0944b51d432421512b",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 12124553
+    },
+    {
+      "id": 44271442,
+      "label": "ocean",
+      "group": "",
+      "status": "running",
+      "created": "2023-03-22T19:05:01",
+      "updated": "2024-09-10T22:41:07",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "170.187.166.149"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe4d:5c07/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-10T22:11:47"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "b9d9ff9893011bded17353f50270bdab78d58b42",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 11503616
+    },
+    {
+      "id": 44271488,
+      "label": "goodshepherd",
+      "group": "",
+      "status": "running",
+      "created": "2023-03-22T19:06:09",
+      "updated": "2024-09-10T20:43:19",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "170.187.166.70"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe4d:5c78/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-10T20:29:20"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "eb29c0e683e0f66b3f03dd7467306bf48a3c8e99",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 7607631
+    },
+    {
+      "id": 45444108,
+      "label": "doylestown",
+      "group": "",
+      "status": "running",
+      "created": "2023-04-23T21:02:50",
+      "updated": "2024-09-11T09:17:36",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "143.42.229.222"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fea0:a353/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 0,
+        "network_out": 0,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T04:41:15"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "2d02e47c80fc50308e9db6c0af656e2783962d31",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 10682131
+    },
+    {
+      "id": 46186317,
+      "label": "lakeside",
+      "group": "",
+      "status": "running",
+      "created": "2023-05-16T13:28:33",
+      "updated": "2024-09-10T20:44:20",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "96.126.111.211"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe6c:f8a0/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-10T20:30:31"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "0127c8f2e8fa9a94f9fe46e264af7e889d808362",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3325437
+    },
+    {
+      "id": 49135192,
+      "label": "inspira",
+      "group": "",
+      "status": "running",
+      "created": "2023-08-28T08:38:53",
+      "updated": "2024-09-11T02:53:50",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.79.177.127"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe34:fa74/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 0,
+        "network_out": 0,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W2"
+        },
+        "last_successful": "2024-09-11T02:36:17"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "135bfa280595a1becd531aca69e997fa222b9214",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 14366349
+    },
+    {
+      "id": 50935654,
+      "label": "stjosephs",
+      "group": "",
+      "status": "running",
+      "created": "2023-10-16T15:52:16",
+      "updated": "2024-09-10T21:05:05",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.79.158.90"
+      ],
+      "ipv6": "2600:3c03::f03c:93ff:fe50:1636/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-10T20:57:29"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "e36b971087c98564b67156145d654ec2cb99733a",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3296321
+    },
+    {
+      "id": 52939828,
+      "label": "riverview",
+      "group": "",
+      "status": "running",
+      "created": "2023-12-12T09:25:26",
+      "updated": "2024-09-11T02:51:20",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.79.189.38"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe59:6edb/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Sunday",
+          "window": "W2"
+        },
+        "last_successful": "2024-09-11T02:23:27"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "a212bca89e4f23958948dc18086b1b8f3e887d93",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 13737448
+    },
+    {
+      "id": 54751469,
+      "label": "silvercross",
+      "group": "",
+      "status": "running",
+      "created": "2024-02-08T22:21:19",
+      "updated": "2024-09-11T14:41:47",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "104.237.150.15"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:feb4:af09/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 0,
+        "network_out": 0,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W14"
+        },
+        "last_successful": "2024-09-11T14:29:45"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "16dfbdf1b6cbbc699d752179a9e7e97382369a54",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 11595372
+    },
+    {
+      "id": 57219768,
+      "label": "crownpoint",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-15T18:56:11",
+      "updated": "2024-09-11T07:08:26",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.56.103.126"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe09:09fa/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T06:40:29"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "82d6ae6cf449e8936c4a49a1f2ae3bcef2503064",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3648358
+    },
+    {
+      "id": 57219789,
+      "label": "dyer",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-15T18:56:45",
+      "updated": "2024-09-11T02:14:00",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.56.103.145"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe09:09d8/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T02:08:08"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "24c47bdd73da5290a6ef530dc57ec7f3b33572bf",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3421669
+    },
+    {
+      "id": 57219797,
+      "label": "michigancity",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-15T18:57:11",
+      "updated": "2024-09-11T06:24:51",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.56.103.147"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe09:09be/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T06:14:32"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "10906adff574fafe9c588e801d481cc19029219b",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3486231
+    },
+    {
+      "id": 57219821,
+      "label": "munster",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-15T18:57:30",
+      "updated": "2024-09-11T02:27:50",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.56.103.149"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe09:0949/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T02:17:33"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "cdef56a0d3a0570cfdf047976b633ebabedf56cd",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3734306
+    },
+    {
+      "id": 57219848,
+      "label": "olympiafields",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-15T18:58:01",
+      "updated": "2024-09-10T20:42:56",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.56.103.164"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe09:ec0f/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-10T20:32:40"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "e8710f3233fca4e5fc762f1fc22df781d3acf391",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3355922
+    },
+    {
+      "id": 57220082,
+      "label": "crawfordsville",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-15T19:01:25",
+      "updated": "2024-09-10T18:27:43",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.56.103.30"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe09:ec93/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-10T18:15:46"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "43de4ac9626e6af09297124fc21eab9e3a2997d6",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3491888
+    },
+    {
+      "id": 57220112,
+      "label": "indianapolis",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-15T19:02:04",
+      "updated": "2024-09-10T16:42:33",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.56.103.61"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe09:28e3/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-10T16:36:10"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "3d3a98cb95ae26fc4da38fb385d163fd86d7bb3d",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3880755
+    },
+    {
+      "id": 57220145,
+      "label": "lafayette",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-15T19:02:47",
+      "updated": "2024-09-11T14:24:14",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.56.103.97"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe09:2880/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T14:15:26"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "0c51d78c69b8e9dca253b2314dde6e79b146ac1a",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 4085959
+    },
+    {
+      "id": 57220165,
+      "label": "mooresville",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-15T19:03:30",
+      "updated": "2024-09-11T12:50:31",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "172.104.13.247"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe09:28fd/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T12:36:44"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "d636dc4680f95bfbc0e1c7cf22b48972eb6162dc",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 3372958
+    },
+    {
+      "id": 57220185,
+      "label": "orthocarmel",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-15T19:04:16",
+      "updated": "2024-09-11T10:27:48",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "172.104.13.253"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe09:283b/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T10:13:50"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "3962a2683b399d5d90fe1ab470b85115b549e2bb",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3360297
+    },
+    {
+      "id": 57539020,
+      "label": "osceolaregional",
+      "group": "",
+      "status": "running",
+      "created": "2024-04-22T04:01:09",
+      "updated": "2024-09-11T04:26:22",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.33.80.190"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe80:3203/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 0,
+        "network_out": 0,
+        "transfer_quota": 80,
+        "io": 0
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Saturday",
+          "window": "W4"
+        },
+        "last_successful": "2024-09-11T04:13:59"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "e31346a5a326807e462802ad93d1d27ef3d28f7c",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030040,
+      "lastcheckid": 7935371
+    },
+    {
+      "id": 58718300,
+      "label": "hopewell",
+      "group": "",
+      "status": "running",
+      "created": "2024-05-13T12:47:08",
+      "updated": "2024-09-11T06:36:39",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.33.90.50"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe23:049c/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T06:28:08"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "2fb79276384b3c7b7411d90339cf14f85c4781e8",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3368718
+    },
+    {
+      "id": 62150215,
+      "label": "rensselaer",
+      "group": "",
+      "status": "running",
+      "created": "2024-08-01T20:12:06",
+      "updated": "2024-09-10T22:38:39",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "96.126.111.206"
+      ],
+      "ipv6": "2600:3c03::f03c:94ff:fe68:b8f0/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-10T22:31:22"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "598d115e7163ca5b7b3d1994becee156acfcb945",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3264912
+    },
+    {
+      "id": 62948415,
+      "label": "dearborn",
+      "group": "",
+      "status": "running",
+      "created": "2024-08-22T15:10:11",
+      "updated": "2024-09-11T00:34:50",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "45.33.80.42"
+      ],
+      "ipv6": "2600:3c03::f03c:95ff:fe6c:4a73/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Scheduling",
+          "window": "Scheduling"
+        },
+        "last_successful": "2024-09-11T00:30:08"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "9c7219f8e3e33875047e6b169b3f167a43218198",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 1726030039,
+      "lastcheckid": 3264889
+    },
+    {
+      "id": 63213583,
+      "label": "jsumc",
+      "group": "",
+      "status": "running",
+      "created": "2024-08-28T18:41:22",
+      "updated": "2024-09-11T02:48:55",
+      "type": "g6-standard-4",
+      "ipv4": [
+        "45.79.173.37"
+      ],
+      "ipv6": "2600:3c03::f03c:95ff:fe14:f26d/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 163840,
+        "memory": 8192,
+        "vcpus": 4,
+        "gpus": 0,
+        "transfer": 5000
+      },
+      "alerts": {
+        "cpu": 360,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Friday",
+          "window": "W2"
+        },
+        "last_successful": "2024-09-11T02:44:09"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "6d6da7d0bb4e49c73e0555edd12f79dcf8c3e377",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 30928457
+    },
+    {
+      "id": 63222349,
+      "label": "jfk",
+      "group": "",
+      "status": "running",
+      "created": "2024-08-28T23:19:09",
+      "updated": "2024-09-11T02:33:54",
+      "type": "g6-standard-4",
+      "ipv4": [
+        "45.33.80.114"
+      ],
+      "ipv6": "2600:3c03::f03c:95ff:fe14:68a9/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 163840,
+        "memory": 8192,
+        "vcpus": 4,
+        "gpus": 0,
+        "transfer": 5000
+      },
+      "alerts": {
+        "cpu": 360,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": true,
+        "available": true,
+        "schedule": {
+          "day": "Friday",
+          "window": "W2"
+        },
+        "last_successful": "2024-09-11T02:30:43"
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "c2540e34a2008597a823536ecae3241024679afe",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 24144192
+    }
+  ],
+  "timestamp": 1726033451
+}
