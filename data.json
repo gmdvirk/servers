@@ -6,7 +6,7 @@
       "group": "",
       "status": "running",
       "created": "2022-08-17T22:25:06",
-      "updated": "2024-09-11T02:43:54",
+      "updated": "2024-09-12T19:10:26",
       "type": "g6-standard-2",
       "ipv4": [
         "66.228.42.110"
@@ -36,7 +36,7 @@
           "day": "Sunday",
           "window": "W2"
         },
-        "last_successful": "2024-09-11T02:36:34"
+        "last_successful": "2024-09-12T02:37:15"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -49,7 +49,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 9908947
+      "lastcheckid": 9936502
     },
     {
       "id": 38160133,
@@ -57,7 +57,7 @@
       "group": "",
       "status": "running",
       "created": "2022-08-18T22:54:09",
-      "updated": "2024-09-11T07:09:43",
+      "updated": "2024-09-12T07:09:35",
       "type": "g6-standard-2",
       "ipv4": [
         "97.107.133.97"
@@ -87,7 +87,7 @@
           "day": "Saturday",
           "window": "W6"
         },
-        "last_successful": "2024-09-11T06:47:22"
+        "last_successful": "2024-09-12T06:46:28"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -100,7 +100,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3779184
+      "lastcheckid": 3786958
     },
     {
       "id": 38181892,
@@ -108,7 +108,7 @@
       "group": "",
       "status": "running",
       "created": "2022-08-19T22:20:50",
-      "updated": "2024-09-11T07:02:29",
+      "updated": "2024-09-12T06:59:43",
       "type": "g6-standard-2",
       "ipv4": [
         "173.255.235.151"
@@ -138,7 +138,7 @@
           "day": "Saturday",
           "window": "W6"
         },
-        "last_successful": "2024-09-11T06:38:54"
+        "last_successful": "2024-09-12T06:37:14"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -151,7 +151,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3883985
+      "lastcheckid": 3887268
     },
     {
       "id": 38182373,
@@ -159,7 +159,7 @@
       "group": "",
       "status": "running",
       "created": "2022-08-19T23:01:46",
-      "updated": "2024-09-10T21:49:11",
+      "updated": "2024-09-12T16:53:45",
       "type": "g6-standard-2",
       "ipv4": [
         "45.33.69.34"
@@ -189,7 +189,7 @@
           "day": "Saturday",
           "window": "W16"
         },
-        "last_successful": "2024-09-10T16:43:13"
+        "last_successful": "2024-09-12T16:43:41"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -202,7 +202,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 4780764
+      "lastcheckid": 4782954
     },
     {
       "id": 38200094,
@@ -210,7 +210,7 @@
       "group": "",
       "status": "running",
       "created": "2022-08-20T19:50:18",
-      "updated": "2024-09-11T12:53:24",
+      "updated": "2024-09-12T12:54:12",
       "type": "g6-standard-2",
       "ipv4": [
         "45.79.144.35"
@@ -240,7 +240,7 @@
           "day": "Saturday",
           "window": "W12"
         },
-        "last_successful": "2024-09-11T12:42:21"
+        "last_successful": "2024-09-12T12:46:11"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -253,7 +253,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3856512
+      "lastcheckid": 3858339
     },
     {
       "id": 38201061,
@@ -261,7 +261,7 @@
       "group": "",
       "status": "running",
       "created": "2022-08-20T21:54:50",
-      "updated": "2024-09-11T04:49:01",
+      "updated": "2024-09-12T04:39:38",
       "type": "g6-standard-2",
       "ipv4": [
         "192.155.90.188"
@@ -291,7 +291,7 @@
           "day": "Saturday",
           "window": "W4"
         },
-        "last_successful": "2024-09-11T04:29:45"
+        "last_successful": "2024-09-12T04:27:49"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -304,7 +304,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3279267
+      "lastcheckid": 3279459
     },
     {
       "id": 39225416,
@@ -312,7 +312,7 @@
       "group": "",
       "status": "running",
       "created": "2022-10-04T06:12:51",
-      "updated": "2024-09-11T12:12:37",
+      "updated": "2024-09-12T12:17:09",
       "type": "g6-standard-2",
       "ipv4": [
         "45.79.135.19"
@@ -342,7 +342,7 @@
           "day": "Saturday",
           "window": "W12"
         },
-        "last_successful": "2024-09-11T12:06:53"
+        "last_successful": "2024-09-12T12:06:57"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -355,7 +355,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 6171008
+      "lastcheckid": 6183426
     },
     {
       "id": 40012063,
@@ -363,7 +363,7 @@
       "group": "",
       "status": "running",
       "created": "2022-11-04T14:57:33",
-      "updated": "2024-09-11T09:33:48",
+      "updated": "2024-09-12T20:57:59",
       "type": "g6-standard-2",
       "ipv4": [
         "97.107.140.202"
@@ -393,7 +393,7 @@
           "day": "Saturday",
           "window": "W20"
         },
-        "last_successful": "2024-09-10T20:41:24"
+        "last_successful": "2024-09-12T20:41:11"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -406,7 +406,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 4588489
+      "lastcheckid": 4595192
     },
     {
       "id": 41582210,
@@ -414,7 +414,7 @@
       "group": "",
       "status": "running",
       "created": "2023-01-11T15:34:07",
-      "updated": "2024-09-11T14:39:51",
+      "updated": "2024-09-12T14:47:24",
       "type": "g6-standard-2",
       "ipv4": [
         "172.104.31.174"
@@ -444,7 +444,7 @@
           "day": "Saturday",
           "window": "W14"
         },
-        "last_successful": "2024-09-11T14:34:39"
+        "last_successful": "2024-09-12T14:33:02"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -457,7 +457,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3351806
+      "lastcheckid": 3351973
     },
     {
       "id": 41856614,
@@ -465,7 +465,7 @@
       "group": "",
       "status": "running",
       "created": "2023-01-19T19:28:52",
-      "updated": "2024-09-11T11:28:15",
+      "updated": "2024-09-12T03:02:41",
       "type": "g6-standard-2",
       "ipv4": [
         "45.79.186.139"
@@ -495,7 +495,7 @@
           "day": "Sunday",
           "window": "W2"
         },
-        "last_successful": "2024-09-11T02:45:25"
+        "last_successful": "2024-09-12T02:46:12"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -508,7 +508,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 4738755
+      "lastcheckid": 4743234
     },
     {
       "id": 42275260,
@@ -516,7 +516,7 @@
       "group": "",
       "status": "running",
       "created": "2023-02-02T13:50:06",
-      "updated": "2024-09-10T16:27:18",
+      "updated": "2024-09-12T16:28:10",
       "type": "g6-standard-2",
       "ipv4": [
         "170.187.162.130"
@@ -546,7 +546,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-10T16:18:53"
+        "last_successful": "2024-09-12T16:18:49"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -559,7 +559,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3265053
+      "lastcheckid": 3265209
     },
     {
       "id": 44213616,
@@ -567,7 +567,7 @@
       "group": "",
       "status": "running",
       "created": "2023-03-21T15:57:51",
-      "updated": "2024-09-11T02:08:44",
+      "updated": "2024-09-12T02:09:23",
       "type": "g6-standard-2",
       "ipv4": [
         "143.42.5.85"
@@ -597,7 +597,7 @@
           "day": "Sunday",
           "window": "W2"
         },
-        "last_successful": "2024-09-11T02:04:58"
+        "last_successful": "2024-09-12T02:04:29"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -610,7 +610,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3546677
+      "lastcheckid": 3548113
     },
     {
       "id": 44221990,
@@ -618,7 +618,7 @@
       "group": "",
       "status": "running",
       "created": "2023-03-21T19:06:29",
-      "updated": "2024-09-10T22:50:24",
+      "updated": "2024-09-12T12:03:15",
       "type": "g6-standard-2",
       "ipv4": [
         "170.187.164.164"
@@ -648,7 +648,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-10T22:31:00"
+        "last_successful": "2024-09-11T22:30:41"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -661,7 +661,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3293401
+      "lastcheckid": 3293557
     },
     {
       "id": 44270942,
@@ -669,7 +669,7 @@
       "group": "",
       "status": "running",
       "created": "2023-03-22T18:54:30",
-      "updated": "2024-09-11T06:41:46",
+      "updated": "2024-09-12T06:43:53",
       "type": "g6-standard-2",
       "ipv4": [
         "45.33.72.152"
@@ -699,7 +699,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T06:25:28"
+        "last_successful": "2024-09-12T06:26:09"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -712,7 +712,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 10908573
+      "lastcheckid": 10936956
     },
     {
       "id": 44271322,
@@ -720,7 +720,7 @@
       "group": "",
       "status": "running",
       "created": "2023-03-22T19:03:06",
-      "updated": "2024-09-11T00:42:23",
+      "updated": "2024-09-12T00:42:13",
       "type": "g6-standard-2",
       "ipv4": [
         "143.42.183.244"
@@ -750,7 +750,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T00:32:13"
+        "last_successful": "2024-09-12T00:32:51"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -763,7 +763,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 14685900
+      "lastcheckid": 14723447
     },
     {
       "id": 44271384,
@@ -771,7 +771,7 @@
       "group": "",
       "status": "running",
       "created": "2023-03-22T19:04:06",
-      "updated": "2024-09-11T02:26:14",
+      "updated": "2024-09-12T02:33:44",
       "type": "g6-standard-2",
       "ipv4": [
         "172.104.8.164"
@@ -801,7 +801,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T02:22:10"
+        "last_successful": "2024-09-12T02:22:45"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -814,7 +814,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 7436026
+      "lastcheckid": 7449920
     },
     {
       "id": 44271409,
@@ -822,7 +822,7 @@
       "group": "",
       "status": "running",
       "created": "2023-03-22T19:04:32",
-      "updated": "2024-09-11T00:39:54",
+      "updated": "2024-09-12T12:16:51",
       "type": "g6-standard-2",
       "ipv4": [
         "172.104.8.229"
@@ -852,7 +852,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T00:30:38"
+        "last_successful": "2024-09-12T00:30:50"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -865,7 +865,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 12124553
+      "lastcheckid": 12140424
     },
     {
       "id": 44271442,
@@ -873,7 +873,7 @@
       "group": "",
       "status": "running",
       "created": "2023-03-22T19:05:01",
-      "updated": "2024-09-10T22:41:07",
+      "updated": "2024-09-11T22:31:28",
       "type": "g6-standard-2",
       "ipv4": [
         "170.187.166.149"
@@ -903,7 +903,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-10T22:11:47"
+        "last_successful": "2024-09-11T22:14:28"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -916,7 +916,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 11503616
+      "lastcheckid": 11547913
     },
     {
       "id": 44271488,
@@ -924,7 +924,7 @@
       "group": "",
       "status": "running",
       "created": "2023-03-22T19:06:09",
-      "updated": "2024-09-10T20:43:19",
+      "updated": "2024-09-12T20:41:55",
       "type": "g6-standard-2",
       "ipv4": [
         "170.187.166.70"
@@ -954,7 +954,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-10T20:29:20"
+        "last_successful": "2024-09-12T20:29:48"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -967,7 +967,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 7607631
+      "lastcheckid": 7626075
     },
     {
       "id": 45444108,
@@ -975,7 +975,7 @@
       "group": "",
       "status": "running",
       "created": "2023-04-23T21:02:50",
-      "updated": "2024-09-11T09:17:36",
+      "updated": "2024-09-12T04:49:33",
       "type": "g6-standard-2",
       "ipv4": [
         "143.42.229.222"
@@ -1005,7 +1005,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T04:41:15"
+        "last_successful": "2024-09-12T04:41:34"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1018,7 +1018,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 10682131
+      "lastcheckid": 10695501
     },
     {
       "id": 46186317,
@@ -1026,7 +1026,7 @@
       "group": "",
       "status": "running",
       "created": "2023-05-16T13:28:33",
-      "updated": "2024-09-10T20:44:20",
+      "updated": "2024-09-12T20:47:41",
       "type": "g6-standard-2",
       "ipv4": [
         "96.126.111.211"
@@ -1056,7 +1056,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-10T20:30:31"
+        "last_successful": "2024-09-12T20:31:00"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1069,7 +1069,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3325437
+      "lastcheckid": 3325593
     },
     {
       "id": 49135192,
@@ -1077,7 +1077,7 @@
       "group": "",
       "status": "running",
       "created": "2023-08-28T08:38:53",
-      "updated": "2024-09-11T02:53:50",
+      "updated": "2024-09-12T02:53:17",
       "type": "g6-standard-2",
       "ipv4": [
         "45.79.177.127"
@@ -1107,7 +1107,7 @@
           "day": "Saturday",
           "window": "W2"
         },
-        "last_successful": "2024-09-11T02:36:17"
+        "last_successful": "2024-09-12T02:36:09"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1120,7 +1120,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 14366349
+      "lastcheckid": 14395546
     },
     {
       "id": 50935654,
@@ -1128,7 +1128,7 @@
       "group": "",
       "status": "running",
       "created": "2023-10-16T15:52:16",
-      "updated": "2024-09-10T21:05:05",
+      "updated": "2024-09-12T21:00:19",
       "type": "g6-standard-2",
       "ipv4": [
         "45.79.158.90"
@@ -1158,7 +1158,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-10T20:57:29"
+        "last_successful": "2024-09-12T20:57:28"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1171,7 +1171,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3296321
+      "lastcheckid": 3296477
     },
     {
       "id": 52939828,
@@ -1179,7 +1179,7 @@
       "group": "",
       "status": "running",
       "created": "2023-12-12T09:25:26",
-      "updated": "2024-09-11T02:51:20",
+      "updated": "2024-09-12T03:03:10",
       "type": "g6-standard-2",
       "ipv4": [
         "45.79.189.38"
@@ -1209,7 +1209,7 @@
           "day": "Sunday",
           "window": "W2"
         },
-        "last_successful": "2024-09-11T02:23:27"
+        "last_successful": "2024-09-12T02:26:18"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1222,7 +1222,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 13737448
+      "lastcheckid": 13772734
     },
     {
       "id": 54751469,
@@ -1230,7 +1230,7 @@
       "group": "",
       "status": "running",
       "created": "2024-02-08T22:21:19",
-      "updated": "2024-09-11T14:41:47",
+      "updated": "2024-09-12T14:38:50",
       "type": "g6-standard-2",
       "ipv4": [
         "104.237.150.15"
@@ -1260,7 +1260,7 @@
           "day": "Saturday",
           "window": "W14"
         },
-        "last_successful": "2024-09-11T14:29:45"
+        "last_successful": "2024-09-12T14:30:07"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1273,7 +1273,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 11595372
+      "lastcheckid": 11607479
     },
     {
       "id": 57219768,
@@ -1281,7 +1281,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-15T18:56:11",
-      "updated": "2024-09-11T07:08:26",
+      "updated": "2024-09-12T07:08:23",
       "type": "g6-standard-2",
       "ipv4": [
         "45.56.103.126"
@@ -1311,7 +1311,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T06:40:29"
+        "last_successful": "2024-09-12T06:39:52"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1324,7 +1324,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3648358
+      "lastcheckid": 3654520
     },
     {
       "id": 57219789,
@@ -1332,7 +1332,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-15T18:56:45",
-      "updated": "2024-09-11T02:14:00",
+      "updated": "2024-09-12T02:13:12",
       "type": "g6-standard-2",
       "ipv4": [
         "45.56.103.145"
@@ -1362,7 +1362,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T02:08:08"
+        "last_successful": "2024-09-12T02:08:21"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1375,7 +1375,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3421669
+      "lastcheckid": 3423431
     },
     {
       "id": 57219797,
@@ -1383,7 +1383,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-15T18:57:11",
-      "updated": "2024-09-11T06:24:51",
+      "updated": "2024-09-12T06:27:46",
       "type": "g6-standard-2",
       "ipv4": [
         "45.56.103.147"
@@ -1413,7 +1413,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T06:14:32"
+        "last_successful": "2024-09-12T06:14:17"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1426,7 +1426,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3486231
+      "lastcheckid": 3490132
     },
     {
       "id": 57219821,
@@ -1434,7 +1434,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-15T18:57:30",
-      "updated": "2024-09-11T02:27:50",
+      "updated": "2024-09-12T02:26:54",
       "type": "g6-standard-2",
       "ipv4": [
         "45.56.103.149"
@@ -1464,7 +1464,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T02:17:33"
+        "last_successful": "2024-09-12T02:17:04"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1477,7 +1477,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3734306
+      "lastcheckid": 3745324
     },
     {
       "id": 57219848,
@@ -1485,7 +1485,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-15T18:58:01",
-      "updated": "2024-09-10T20:42:56",
+      "updated": "2024-09-12T20:43:21",
       "type": "g6-standard-2",
       "ipv4": [
         "45.56.103.164"
@@ -1515,7 +1515,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-10T20:32:40"
+        "last_successful": "2024-09-12T20:32:36"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1528,7 +1528,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3355922
+      "lastcheckid": 3356709
     },
     {
       "id": 57220082,
@@ -1536,7 +1536,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-15T19:01:25",
-      "updated": "2024-09-10T18:27:43",
+      "updated": "2024-09-12T18:29:29",
       "type": "g6-standard-2",
       "ipv4": [
         "45.56.103.30"
@@ -1566,7 +1566,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-10T18:15:46"
+        "last_successful": "2024-09-12T18:16:30"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1579,7 +1579,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3491888
+      "lastcheckid": 3504625
     },
     {
       "id": 57220112,
@@ -1587,7 +1587,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-15T19:02:04",
-      "updated": "2024-09-10T16:42:33",
+      "updated": "2024-09-12T16:43:50",
       "type": "g6-standard-2",
       "ipv4": [
         "45.56.103.61"
@@ -1617,7 +1617,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-10T16:36:10"
+        "last_successful": "2024-09-12T16:36:20"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1630,7 +1630,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3880755
+      "lastcheckid": 3885199
     },
     {
       "id": 57220145,
@@ -1638,7 +1638,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-15T19:02:47",
-      "updated": "2024-09-11T14:24:14",
+      "updated": "2024-09-12T14:23:48",
       "type": "g6-standard-2",
       "ipv4": [
         "45.56.103.97"
@@ -1668,7 +1668,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T14:15:26"
+        "last_successful": "2024-09-12T14:14:51"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1681,7 +1681,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 4085959
+      "lastcheckid": 4105383
     },
     {
       "id": 57220165,
@@ -1689,7 +1689,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-15T19:03:30",
-      "updated": "2024-09-11T12:50:31",
+      "updated": "2024-09-12T12:53:40",
       "type": "g6-standard-2",
       "ipv4": [
         "172.104.13.247"
@@ -1719,7 +1719,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T12:36:44"
+        "last_successful": "2024-09-12T12:39:31"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1732,7 +1732,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 3372958
+      "lastcheckid": 3375319
     },
     {
       "id": 57220185,
@@ -1740,7 +1740,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-15T19:04:16",
-      "updated": "2024-09-11T10:27:48",
+      "updated": "2024-09-12T10:23:11",
       "type": "g6-standard-2",
       "ipv4": [
         "172.104.13.253"
@@ -1770,7 +1770,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T10:13:50"
+        "last_successful": "2024-09-12T10:14:45"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1783,7 +1783,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3360297
+      "lastcheckid": 3363191
     },
     {
       "id": 57539020,
@@ -1791,7 +1791,7 @@
       "group": "",
       "status": "running",
       "created": "2024-04-22T04:01:09",
-      "updated": "2024-09-11T04:26:22",
+      "updated": "2024-09-12T04:27:46",
       "type": "g6-standard-2",
       "ipv4": [
         "45.33.80.190"
@@ -1821,7 +1821,7 @@
           "day": "Saturday",
           "window": "W4"
         },
-        "last_successful": "2024-09-11T04:13:59"
+        "last_successful": "2024-09-12T04:14:36"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1834,7 +1834,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030040,
-      "lastcheckid": 7935371
+      "lastcheckid": 7939038
     },
     {
       "id": 58718300,
@@ -1842,7 +1842,7 @@
       "group": "",
       "status": "running",
       "created": "2024-05-13T12:47:08",
-      "updated": "2024-09-11T06:36:39",
+      "updated": "2024-09-12T06:28:29",
       "type": "g6-standard-2",
       "ipv4": [
         "45.33.90.50"
@@ -1872,7 +1872,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T06:28:08"
+        "last_successful": "2024-09-12T06:27:21"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1885,7 +1885,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3368718
+      "lastcheckid": 3370099
     },
     {
       "id": 62150215,
@@ -1893,7 +1893,7 @@
       "group": "",
       "status": "running",
       "created": "2024-08-01T20:12:06",
-      "updated": "2024-09-10T22:38:39",
+      "updated": "2024-09-11T22:41:15",
       "type": "g6-standard-2",
       "ipv4": [
         "96.126.111.206"
@@ -1923,7 +1923,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-10T22:31:22"
+        "last_successful": "2024-09-11T22:32:14"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1936,7 +1936,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3264912
+      "lastcheckid": 3265068
     },
     {
       "id": 62948415,
@@ -1944,7 +1944,7 @@
       "group": "",
       "status": "running",
       "created": "2024-08-22T15:10:11",
-      "updated": "2024-09-11T00:34:50",
+      "updated": "2024-09-12T15:20:37",
       "type": "g6-standard-2",
       "ipv4": [
         "45.33.80.42"
@@ -1974,7 +1974,7 @@
           "day": "Scheduling",
           "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T00:30:08"
+        "last_successful": "2024-09-12T00:29:33"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -1987,7 +1987,7 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 1726030039,
-      "lastcheckid": 3264889
+      "lastcheckid": 3265045
     },
     {
       "id": 63213583,
@@ -1995,7 +1995,7 @@
       "group": "",
       "status": "running",
       "created": "2024-08-28T18:41:22",
-      "updated": "2024-09-11T02:48:55",
+      "updated": "2024-09-12T06:04:00",
       "type": "g6-standard-4",
       "ipv4": [
         "45.79.173.37"
@@ -2025,7 +2025,7 @@
           "day": "Friday",
           "window": "W2"
         },
-        "last_successful": "2024-09-11T02:44:09"
+        "last_successful": "2024-09-12T02:45:59"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
@@ -2038,32 +2038,32 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 30928457
+      "lastcheckid": 31079630
     },
     {
-      "id": 63222349,
-      "label": "jfk",
+      "id": 63817941,
+      "label": "greatplains",
       "group": "",
       "status": "running",
-      "created": "2024-08-28T23:19:09",
-      "updated": "2024-09-11T02:33:54",
-      "type": "g6-standard-4",
+      "created": "2024-09-12T12:21:36",
+      "updated": "2024-09-12T20:00:06",
+      "type": "g6-standard-2",
       "ipv4": [
-        "45.33.80.114"
+        "45.33.76.138"
       ],
-      "ipv6": "2600:3c03::f03c:95ff:fe14:68a9/128",
+      "ipv6": "2600:3c03::f03c:95ff:fea5:9fc8/128",
       "image": "linode/ubuntu18.04",
       "region": "us-east",
       "site_type": "core",
       "specs": {
-        "disk": 163840,
-        "memory": 8192,
-        "vcpus": 4,
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
         "gpus": 0,
-        "transfer": 5000
+        "transfer": 4000
       },
       "alerts": {
-        "cpu": 360,
+        "cpu": 180,
         "network_in": 10,
         "network_out": 10,
         "transfer_quota": 80,
@@ -2073,15 +2073,15 @@
         "enabled": true,
         "available": true,
         "schedule": {
-          "day": "Friday",
-          "window": "W2"
+          "day": "Scheduling",
+          "window": "Scheduling"
         },
-        "last_successful": "2024-09-11T02:30:43"
+        "last_successful": "2024-09-12T16:07:54"
       },
       "hypervisor": "kvm",
       "watchdog_enabled": true,
       "tags": [],
-      "host_uuid": "c2540e34a2008597a823536ecae3241024679afe",
+      "host_uuid": "a003b01dbb81487c29e92c3ce363c75d6415eaf1",
       "has_user_data": false,
       "placement_group": null,
       "disk_encryption": "disabled",
@@ -2089,8 +2089,59 @@
       "capabilities": [],
       "check": "success",
       "laststartup": 0,
-      "lastcheckid": 24144192
+      "lastcheckid": 3264325
+    },
+    {
+      "id": 63832192,
+      "label": "jfk",
+      "group": "",
+      "status": "running",
+      "created": "2024-09-12T17:25:55",
+      "updated": "2024-09-12T19:00:43",
+      "type": "g6-standard-2",
+      "ipv4": [
+        "66.228.40.104"
+      ],
+      "ipv6": "2600:3c03::f03c:95ff:fe46:8892/128",
+      "image": "linode/ubuntu18.04",
+      "region": "us-east",
+      "site_type": "core",
+      "specs": {
+        "disk": 81920,
+        "memory": 4096,
+        "vcpus": 2,
+        "gpus": 0,
+        "transfer": 4000
+      },
+      "alerts": {
+        "cpu": 180,
+        "network_in": 10,
+        "network_out": 10,
+        "transfer_quota": 80,
+        "io": 10000
+      },
+      "backups": {
+        "enabled": false,
+        "available": false,
+        "schedule": {
+          "day": null,
+          "window": null
+        },
+        "last_successful": null
+      },
+      "hypervisor": "kvm",
+      "watchdog_enabled": true,
+      "tags": [],
+      "host_uuid": "c6618489f09422003470c02e7f12a3e0b5303ddb",
+      "has_user_data": false,
+      "placement_group": null,
+      "disk_encryption": "disabled",
+      "lke_cluster_id": null,
+      "capabilities": [],
+      "check": "success",
+      "laststartup": 0,
+      "lastcheckid": 24228086
     }
   ],
-  "timestamp": 1726033451
+  "timestamp": 1726142929
 }

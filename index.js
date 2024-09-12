@@ -14,25 +14,11 @@ const tokenConfig = {token : Config.token};
 const dbConfig = Config.mysqlconnection;
 const descordConfig = Config.descordconfig;
 app.use(cors({
-  origin: function(origin, callback) {
-      const allowedOrigins = [
-          'http://localhost:3001',
-          'http://localhost:3000',
-          'http://45.79.134.38:3001',
-          'http://45.79.134.38:3001/servers',
-          'http://localhost:3002',
-          'http://localhost:3002/servers',
-          // Add other allowed origins here
-      ];
-      if (allowedOrigins.includes(origin) || !origin) {
-          callback(null, true);
-      } else {
-          callback(new Error('Not allowed by CORS'));
-      }
-  },
-  methods: ['GET', 'POST'],
+  origin: true,  // Allows requests from all origins
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
 }));
+
 app.use(express.json());
 let info={
   serverlist:[],
@@ -402,9 +388,7 @@ try{
     
     return timestamp;
   }
-  function getUSATimestamp() {
-    return Math.floor(Date.now() / 1000);
-  }
+  
   function isWithin15Minutes(timestamp1, timestamp2) {
     const differenceInSeconds = Math.abs(timestamp1 - timestamp2);
     const fifteenMinutesInSeconds = 15 * 60; // 15 minutes * 60 seconds
@@ -512,7 +496,8 @@ function getObjectWithHighestId(arr) {
           const id=getObjectWithHighestId(result)
 
           if (result.length === 0 || (obj.lastcheckid && obj.lastcheckid>=id.iId)) {
-            allmeassages.push({...descordConfig, message: `Host ip ${obj.ipv4[0]} and Label : ${obj.label} didn't respond to test packet.`});
+            const tempdescordcong={webhookUrl:descordConfig.webhookUrl,threadId:descordConfig.failurethreadId}
+            allmeassages.push({...tempdescordcong, message: `Server with Label : ${obj.label} didn't respond to test packet.`});
             // info.serverlist[index].lastcheckid=id.iId
             
             if (!(isWithin60Minutes(obj.laststartup, getCurrentEpochTimestamp()))) {
@@ -522,7 +507,7 @@ function getObjectWithHighestId(arr) {
           } else {
             info.serverlist[index].check = "success";
             info.serverlist[index].lastcheckid=id.iId
-            allmeassages.push({...descordConfig, message: `Host ip ${obj.ipv4[0]} and Label : ${obj.label} responded successfully to test packet.`});
+            allmeassages.push({...descordConfig, message: `Server with ${obj.ipv4[0]} and Label : ${obj.label} responded successfully to test packet.`});
           }
         });
     
@@ -541,7 +526,7 @@ function getObjectWithHighestId(arr) {
           )
         .catch(err => console.error('Error writing to database:', err));
         await sendDiscordMessagesWithDelay();
-        await delay(300000); // 10 minutes in milliseconds
+        await delay(300000); // 5 minutes in milliseconds
         })
         .catch(err => console.error('error:' + err));
       }catch(e){
