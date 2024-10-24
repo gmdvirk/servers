@@ -2,6 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
+const mysqlCallback = require('mysql2');
 const fetch = require('node-fetch');
 const Config = require('./config.json');
 const sqlite3 = require('sqlite3').verbose();
@@ -13,6 +14,7 @@ const port = 3001;
 const tokenConfig = {token : Config.token};
 const dbConfig = Config.mysqlconnection;
 const descordConfig = Config.descordconfig;
+const globalServer=Config.globalserver;
 app.use(cors({
   origin: true,  // Allows requests from all origins
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
@@ -24,38 +26,8 @@ let info={
   serverlist:[],
   timestamp:0,
 }
-// Function to write info to data.json
-async function writeInfoToJSON(info) {
-  try {
-    const jsonString = JSON.stringify(info, null, 2);
-    await fs.writeFile('data.json', jsonString, 'utf8');
-    console.log('Data successfully written to data.json');
-  } catch (error) {
-    console.error('Error writing to data.json:', error);
-    throw error;
-  }
-}
-
-// Function to read info from data.json
-async function readInfoFromJSON() {
-  try {
-    const jsonString = await fs.readFile('data.json', 'utf8');
-    const data = JSON.parse(jsonString);
-    console.log('Data successfully read from data.json');
-    return data;
-  } catch (error) {
-    if (error.code === 'ENOENT') {
-      console.log('data.json does not exist, returning default values');
-      return {
-        serverlist: [],
-        timestamp: 0
-      };
-    } else {
-      console.error('Error reading from data.json:', error);
-      throw error;
-    }
-  }
-}
+let logs=[]
+let logsglobal=[]
 // Path to the SQLite database file
 const dbPath = path.join(__dirname, 'info.db');
 // Function to write info to the database
@@ -103,10 +75,287 @@ function writeInfoToDatabase(info) {
     });
   });
 }
-function getEpochTimestampInSeconds(dateString) {
-  return Math.floor(new Date(dateString).getTime() / 1000);
-}
+function resetLogsTable() {
+  return new Promise((resolve, reject) => {
+    const db = new sqlite3.Database(dbPath, (err) => {
+      if (err) {
+        console.error('Error opening database:', err);
+        reject(err);
+        return;
+      }
 
+      db.serialize(() => {
+        db.run(`DROP TABLE IF EXISTS logs`, (err) => {
+          if (err) {
+            console.error('Error dropping table:', err);
+            reject(err);
+            return;
+          }
+
+          db.run(`CREATE TABLE logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            message TEXT,
+            type TEXT,
+            time TEXT
+          )`, (err) => {
+            if (err) {
+              console.error('Error creating table:', err);
+              reject(err);
+            } else {
+              console.log('Logs table reset successfully');
+              resolve();
+            }
+          });
+        });
+      });
+
+      db.close();
+    });
+  });
+}
+function resetGlobalLogsTable() {
+  return new Promise((resolve, reject) => {
+    const db = new sqlite3.Database(dbPath, (err) => {
+      if (err) {
+        console.error('Error opening database:', err);
+        reject(err);
+        return;
+      }
+
+      db.serialize(() => {
+        db.run(`DROP TABLE IF EXISTS globallogs`, (err) => {
+          if (err) {
+            console.error('Error dropping table:', err);
+            reject(err);
+            return;
+          }
+
+          db.run(`CREATE TABLE globallogs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            message TEXT,
+            type TEXT,
+            time TEXT
+          )`, (err) => {
+            if (err) {
+              console.error('Error creating table:', err);
+              reject(err);
+            } else {
+              console.log('Logs table reset successfully');
+              resolve();
+            }
+          });
+        });
+      });
+
+      db.close();
+    });
+  });
+}
+app.post('/api/reset-logs', async (req, res) => {
+  try {
+    await resetLogsTable();
+    res.status(200).json({ message: 'Logs table reset successfully' });
+  } catch (err) {
+    console.error('Error resetting logs table:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.post('/api/reset-globallogs', async (req, res) => {
+  try {
+    await resetGlobalLogsTable();
+    res.status(200).json({ message: 'Global Logs table reset successfully' });
+  } catch (err) {
+    console.error('Error resetting logs table:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+function writeLogsToDatabase(logDataArray) {
+  return new Promise((resolve, reject) => {
+    const db = new sqlite3.Database(dbPath, (err) => {
+      if (err) {
+        console.error('Error opening database:', err);
+        reject(err);
+        return;
+      }
+
+      db.serialize(() => {
+        db.run(`CREATE TABLE IF NOT EXISTS logs (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          message TEXT,
+          type TEXT,
+          time TEXT
+        )`, (err) => {
+          if (err) {
+            console.error('Error creating table:', err);
+            reject(err);
+            return;
+          }
+
+          const stmt = db.prepare(`INSERT INTO logs (message, type, time) VALUES (?, ?, ?)`);
+
+          logDataArray.forEach(logData => {
+            stmt.run(logData.message, logData.type, logData.time, (err) => {
+              if (err) {
+                console.error('Error inserting data:', err);
+                reject(err);
+              } else {
+                console.log('Log data written successfully');
+              }
+            });
+          });
+
+          stmt.finalize((err) => {
+            if (err) {
+              console.error('Error finalizing statement:', err);
+              reject(err);
+            } else {
+              resolve();
+            }
+          });
+        });
+      });
+
+      db.close();
+    });
+  });
+}
+function readLogsFromDatabase(limit = 150, offset = 0) {
+  return new Promise((resolve, reject) => {
+    const db = new sqlite3.Database(dbPath, (err) => {
+      if (err) {
+        console.error('Error opening database:', err);
+        reject(err);
+        return;
+      }
+
+      db.serialize(() => {
+        db.all(`SELECT * FROM logs ORDER BY id DESC LIMIT ? OFFSET ?`, [limit, offset], (err, rows) => {
+          if (err) {
+            console.error('Error reading data:', err);
+            reject(err);
+          } else {
+            const logs = rows.map(row => ({
+              message: row.message,
+              type: row.type,
+              time: row.time
+            }));
+            resolve(logs);
+          }
+        });
+      });
+
+      db.close();
+    });
+  });
+}
+app.get('/api/logs', async (req, res) => {
+  try {
+    const logs = await readLogsFromDatabase();
+    res.status(200).json(logs);
+  } catch (err) {
+    console.error('Error fetching logs:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+function writeGlobalLogsToDatabase(logDataArray) {
+  console.log(logDataArray)
+  return new Promise((resolve, reject) => {
+    const db = new sqlite3.Database(dbPath, (err) => {
+      if (err) {
+        console.error('Error opening database:', err);
+        reject(err);
+        return;
+      }
+
+      db.serialize(() => {
+        db.run(`CREATE TABLE IF NOT EXISTS globallogs (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          message TEXT,
+          type TEXT,
+          time TEXT
+        )`, (err) => {
+          if (err) {
+            console.error('Error creating table:', err);
+            reject(err);
+            return;
+          }
+
+          const stmt = db.prepare(`INSERT INTO globallogs (message, type, time) VALUES (?, ?, ?)`);
+
+          logDataArray.forEach(logData => {
+            stmt.run(logData.message, logData.type, logData.time, (err) => {
+              if (err) {
+                console.error('Error inserting data:', err);
+                reject(err);
+              } else {
+                console.log('Log data written successfully');
+              }
+            });
+          });
+
+          stmt.finalize((err) => {
+            if (err) {
+              console.error('Error finalizing statement:', err);
+              reject(err);
+            } else {
+              resolve();
+            }
+          });
+        });
+      });
+
+      db.close();
+    });
+  });
+}
+function readGlobalLogsFromDatabase(limit = 150, offset = 0) {
+  return new Promise((resolve, reject) => {
+    const db = new sqlite3.Database(dbPath, (err) => {
+      if (err) {
+        console.error('Error opening database:', err);
+        reject(err);
+        return;
+      }
+
+      db.serialize(() => {
+        db.all(`SELECT * FROM globallogs ORDER BY id DESC LIMIT ? OFFSET ?`, [limit, offset], (err, rows) => {
+          if (err) {
+            console.error('Error reading data:', err);
+            reject(err);
+          } else {
+            const logs = rows.map(row => ({
+              message: row.message,
+              type: row.type,
+              time: row.time
+            }));
+            resolve(logs);
+          }
+        });
+      });
+
+      db.close();
+    });
+  });
+}
+app.get('/api/globallogs', async (req, res) => {
+  try {
+    const logs = await readGlobalLogsFromDatabase();
+    res.status(200).json(logs);
+  } catch (err) {
+    console.error('Error fetching logs:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.post('/api/rebootserver', async (req, res) => {
+  try {
+    let data={hostId: req.body.ipv4[0], linodeId: req.body.id,label:req.body.label,type:"website"}
+    await reboot(data);
+    res.status(200).json({Status:true,Message:"Successfully rebooted"});
+  } catch (err) {
+    console.error('Error fetching logs:', err);
+    res.status(500).json({ Status:false,error: 'Internal server error' });
+  }
+});
 function readInfoFromDatabase() {
   //console.log('Attempting to read from database');
   return new Promise((resolve, reject) => {
@@ -211,49 +460,8 @@ async function processServerEvent(serverData, obj) {
     }
   }
 }
-app.post('/api/checkEvent', async (req, res) => {
-  const data = {
-    Eventnum: 0,
-    BadgeId: "10",
-    ReaderId: "10",
-    Eventtype: "22",
-    Timestamp: getCurrentEpochTimestamp()
-  };
-  
-  const {Eventnum,
-    BadgeId,
-    ReaderId,
-    Eventtype,
-    Timestamp}=data
-    const {host}=req.body
-    let tempdbconfig=dbConfig
-    tempdbconfig.host=host
-    const connection = await mysql.createConnection(tempdbconfig);
-  
-  try {
-    const url = `http://${host}/api/events/createEvent`;
-    const response = await axios.post(url, data, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const query = `
-      SELECT * FROM events
-      ORDER BY iId DESC
-      LIMIT 100
-    `;
-    console.log(Timestamp)
-    const [results] = await connection.query(query); // Use promise-based query
-    const index=results.filter((obj)=>obj.vEvent_type==Eventtype&&obj.vBadge_serial==BadgeId&&obj.vReader_serial==ReaderId&&obj.iEvent_num==Eventnum
-    // &&isWithin15Minutes(getCurrentEpochTimestamp(),getEpochTimestampInSeconds(obj.dCreated_at))
-  )
-    res.json(index);
-  } catch (error) {
-    res.status(500).send(error.message);
-  } finally {
-    await connection.end();
-  }
-});
+
+
 app.get('/api/getList', async (req, res) => {
 try{
 // res.status(200).json(info)
@@ -276,9 +484,38 @@ readInfoFromDatabase()
 }
   
 });
+app.post('/api/rebootall', async (req, res) => {
+  try{
+    const tempdescordcong={webhookUrl:descordConfig.webhookUrl,threadId:descordConfig.failurethreadId}
+    await sendDiscordMessage({...tempdescordcong,message:"Reboot for : all servers applied throught the website"})
+    logs.push({message:"Reboot for : all servers applied throught the website",type:"retry",time: getFormattedDate()})
+    const serverChecks = info.serverlist.map(async (obj, index) => {
+          info.serverlist[index].laststartup = getCurrentEpochTimestamp();
+          await reboot({hostId: obj.ipv4[0], linodeId: obj.id,label:obj.label,type:"child"});
+    });
+
+    // Wait for all server checks to complete
+    await Promise.all(serverChecks);
+    res.status(200).json({message:"Done"})
+  }catch(e){
+    res.status(200).json([])
+  }
+    
+  });
+app.get('/api/getGlobal', async (req, res) => {
+  let total=[]
+  
+  const data1 = Config.globaltestpacketconfig
+  for(let i=0;i<info.serverlist.length;i++){
+    let resultglobal=await checkGlobalEvent(data1,info.serverlist[i])
+    total=[...total,...resultglobal]
+  }
+  res.status(200).json(total)
+})
 async function checkGlobalEvent (serverData, obj) {
   const { Eventtype } = serverData;
   let tempdbconfig = { ...dbConfig, host: obj.ipv4[0] };
+  let lastid=obj.globalcheckid
   let  connection=null
   
   try {
@@ -293,9 +530,12 @@ async function checkGlobalEvent (serverData, obj) {
       WHERE iId > ?
       ORDER BY iId DESC
     `;
+    
     const [results] = await connection.query(query, [Math.max(1, maxId - 1000)]);
-    const index=results.filter((obj)=>obj.vEvent_type==Eventtype && 
-    isWithin60Minutes(getCurrentEpochTimestamp(),getEpochTimestampInSeconds(obj.dCreated_at)))
+    const higestid=getObjectWithHighestIdGlobal(results)
+    const index=results.filter((obj)=>obj.vEvent_type==Eventtype
+     && obj.iId>lastid
+  )
     return index
   } catch (error) {
     return []
@@ -306,12 +546,26 @@ async function checkGlobalEvent (serverData, obj) {
     
   }
 }
-async function rebootglobal(){
-console.log("Print Globally")
+function getFormattedDate() {
+  const now = new Date();
+  return now.toLocaleString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+      timeZone: 'America/New_York'  // Adjust this to your preferred timezone
+  });
 }
 async function reboot(rebootdata){
-  console.log("calledrebbot")
-  const { hostId,linodeId } = rebootdata;
+  const { hostId,linodeId,type } = rebootdata;
+  const tempdescordcong={webhookUrl:descordConfig.webhookUrl,threadId:descordConfig.failurethreadId}
+  if(type==="website"){
+    logs.push({message:"Reboot for : "+rebootdata.label +" applied throught he website",type:"retry",time: getFormattedDate()})
+    await sendDiscordMessage({...tempdescordcong,message:"Reboot for : "+rebootdata.label +" applied throught the website"})
+  }
   const url = `https://${hostId}/v4/linode/instances/${linodeId}/reboot`;
   
   const options = {
@@ -323,18 +577,40 @@ async function reboot(rebootdata){
     }
   };
 
-try{
   fetch(url, options)
   .then((res) => {
     res.json()})
-  .then((json) => {
-    // //console.log(json)
+  .then(async(json) => {
+    if(type==="global"){
+      await sendDiscordMessage({...tempdescordcong,message:"Successfully rebooted Globally for : " + rebootdata.label})
+      logsglobal.push({message:"Successfully rebooted Globally for : " + rebootdata.label,type:"retry successful",time: getFormattedDate()})
+    }else if(type==="website"){
+      logs.push({message:"Successfully rebooted for : " +rebootdata.label +" applied throught he website",type:"retry successful",time: getFormattedDate()})
+    await sendDiscordMessage({...tempdescordcong,message:"Successfully rebooted for : " +rebootdata.label +" applied throught he website"}) 
+    }
+    else{
+      await sendDiscordMessage({...tempdescordcong,message:"Successfully rebooted for : " + rebootdata.label})
+      logs.push({message:"Successfully rebooted for : " + rebootdata.label,type:"retry successful",time: getFormattedDate()})
+    }
+  
     return json;
   })
-  .catch(err => console.error('error:' + err));
-}catch(e){
-  return e.message;
-}
+  .catch(async(err) => {
+    console.error( err.message)
+    if(type==="global"){
+    await sendDiscordMessage({...tempdescordcong,message:"Error in rebooting Globally for : "+rebootdata.label+" : "+err.message})
+    logsglobal.push({message:"Error in rebooting Globally for : "+rebootdata.label+" : "+err.message,type:"retry failed",time: getFormattedDate()})
+    }else if(type==="website"){
+      logs.push({message:"Error in rebooting for : "+rebootdata.label+" : "+err.message,type:"retry failed",time: getFormattedDate()})
+      await sendDiscordMessage({...tempdescordcong,message:"Error in rebooting for : "+rebootdata.label+" : "+err.message})   
+    }
+    else{
+     await sendDiscordMessage({...tempdescordcong,message:"Error in rebooting for : "+rebootdata.label+" : "+err.message})
+      logs.push({message:"Error in rebooting for : "+rebootdata.label+" : "+err.message,type:"retry failed",time: getFormattedDate()})
+    }
+    return err.message;
+  });
+
 }
   async function sendDiscordMessage(descorddata){
     const { message, webhookUrl, threadId } = descorddata;
@@ -399,15 +675,16 @@ try{
     const fifteenMinutesInSeconds = 60 * 60; // 15 minutes * 60 seconds
     return differenceInSeconds <= fifteenMinutesInSeconds;
   }
-  function isWithin601Minutes(timestamp1, timestamp2) {
-    const differenceInSeconds = Math.abs(timestamp1 - timestamp2);
-    const fifteenMinutesInSeconds = 60 * 60; // 15 minutes * 60 seconds
-    return differenceInSeconds - fifteenMinutesInSeconds;
-  }
   function containsUnderscore(label) {
     return label.includes('_');
 }
 let allmeassages=[]
+
+let allmeassagesglobal=[]
+let count =0;
+let globalcount =0
+let successCount = 0;
+let totalAttempts = 0;
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -416,6 +693,31 @@ async function sendDiscordMessagesWithDelay() {
     await sendDiscordMessage(obj);
     await delay(10000); // Wait for 10 seconds
   }
+  allmeassages.length=0;
+}
+async function sendDiscordMessagesWithDelayforGlobal() {
+  for (const obj of allmeassagesglobal) {
+    await sendDiscordMessage(obj);
+    await delay(10000); // Wait for 10 seconds
+  }
+  allmeassagesglobal.length=0;
+}
+async function sendDiscordMessagesTotalAttempts() {
+    await sendDiscordMessage({
+      webhookUrl: descordConfig.webhookUrl,
+      threadId: descordConfig.threadId,
+      message: `${successCount} attempts succeeded out of ${totalAttempts} attempts`
+    });
+    logs.push({  message: `${successCount} attempts succeeded out of ${totalAttempts} attempts`,type:"total",time: getFormattedDate()})
+    successCount = 0;
+    totalAttempts = 0;
+}
+function getObjectWithHighestIdGlobal(arr) {
+  if (arr.length === 0) return null; // Return null if the array is empty
+
+  return arr.reduce((maxObj, currentObj) => {
+    return currentObj.iId > maxObj.iId ? currentObj : maxObj;
+  });
 }
 function getObjectWithHighestId(arr) {
   if (arr.length === 0) return null; // Return null if the array is empty
@@ -466,31 +768,45 @@ function getObjectWithHighestId(arr) {
       if(tempindex!==-1){
         userData.data[i].laststartup=info.serverlist[tempindex].laststartup
         userData.data[i].lastcheckid=info.serverlist[tempindex].lastcheckid
+        userData.data[i].globalcheckid=0
+        
       }else{
         userData.data[i].laststartup=0
         userData.data[i].lastcheckid=0
+        userData.data[i].globalcheckid=0
       }
         tempdata.push(userData.data[i])
       }
     }
         info.serverlist=tempdata;
         info.timestamp=getCurrentEpochTimestamp()
-        allmeassages.length=0
+        // allmeassages.length=0
         let globalcheck=true
+        let countglobalevent=0
+        if(count===5){
+          globalcount=0;
           for(let i=0;i<info.serverlist.length;i++){
             let resultglobal=await checkGlobalEvent(data1,info.serverlist[i])
             if(resultglobal.length>0){
-              i=info.serverlist.length
+              const higestid=getObjectWithHighestIdGlobal(resultglobal)
+              countglobalevent =+ resultglobal.length
+              info.serverlist[i].globalcheckid=higestid
               globalcheck=false
             }
           }
-          if(globalcheck){
-            rebootglobal()
-            allmeassages.push({...descordConfig,message:`No server responded for the global test packet`})
+          if(countglobalevent<1){
+            const tempdescordcong={webhookUrl:descordConfig.webhookUrl,threadId:descordConfig.failurethreadId}
+            await reboot({hostId: globalServer.hostid, linodeId: globalServer.id,label:globalServer.label,type:"global"});
+            allmeassagesglobal.push({...tempdescordcong,message:"Got : "+countglobalevent +" from all the servers for global server test packet."})
+            logsglobal.push({message:"Got : "+countglobalevent +" from all the servers for global server test packet.",type:"total",time: getFormattedDate()})
           }else{
-            allmeassages.push({...descordConfig,message:`Global Test packet was received successfully from the servers`})
+            const tempdescordcong={webhookUrl:descordConfig.webhookUrl,threadId:descordConfig.threadId}
+            allmeassagesglobal.push({...tempdescordcong,message:"Got : "+countglobalevent +" from all the servers for global server test packet."})
+            logsglobal.push({message:"Got : "+countglobalevent +" from all the servers for global server test packet.",type:"total",time: getFormattedDate()})
           }
-      
+          
+        }
+        globalcount++;
         const serverChecks = info.serverlist.map(async (obj, index) => {
           let result = await processServerEvent(data, obj);
           const id=getObjectWithHighestId(result)
@@ -498,33 +814,54 @@ function getObjectWithHighestId(arr) {
           if (result.length === 0 || (obj.lastcheckid && obj.lastcheckid>=id.iId)) {
             const tempdescordcong={webhookUrl:descordConfig.webhookUrl,threadId:descordConfig.failurethreadId}
             allmeassages.push({...tempdescordcong, message: `Server with Label : ${obj.label} didn't respond to test packet.`});
-            // info.serverlist[index].lastcheckid=id.iId
-            
+            logs.push({message: `Server with Label : ${obj.label} didn't respond to test packet.`,type:"no response",time: getFormattedDate()})
             if (!(isWithin60Minutes(obj.laststartup, getCurrentEpochTimestamp()))) {
               info.serverlist[index].laststartup = getCurrentEpochTimestamp();
-              await reboot({hostId: obj.ipv4[0], linodeId: obj.id});
+              allmeassages.push({...tempdescordcong,message:"Reboot for : "+obj.label +" applied"})
+              logs.push({message:"Reboot for : "+obj.label +" applied",type:"retry",time: getFormattedDate()})
+              await reboot({hostId: obj.ipv4[0], linodeId: obj.id,label:obj.label,type:"child"});
+              totalAttempts++;
             }
           } else {
             info.serverlist[index].check = "success";
             info.serverlist[index].lastcheckid=id.iId
-            allmeassages.push({...descordConfig, message: `Server with ${obj.ipv4[0]} and Label : ${obj.label} responded successfully to test packet.`});
+            successCount++
+            totalAttempts++
+         
           }
         });
     
         // Wait for all server checks to complete
         await Promise.all(serverChecks);
         try {
-          await writeInfoToJSON(info);
-          console.log('Info written to JSON file');
+          await writeInfoToDatabase(info);
+          if(count == 5){
+            await sendDiscordMessagesTotalAttempts();
+            count =0;
+          }
+          count ++;
         } catch (err) {
           console.error('Error writing to JSON file:', err);
         }
-        writeInfoToDatabase(info)
+        writeLogsToDatabase(logs)
         .then(() => {
-          console.log('Info written to database')
-          }
-          )
-        .catch(err => console.error('Error writing to database:', err));
+         console.log("All log messages stored successfully");
+        
+            logs.length=0
+         })
+          .catch((err) => {
+           console.error("Error storing log messages:", err);
+          });
+          writeGlobalLogsToDatabase(logsglobal)
+          .then(() => {
+            console.log("All globallog messages stored successfully");
+           
+            logsglobal.length=0
+            })
+             .catch((err) => {
+              console.error("Error storing globallog messages:", err);
+             });
+        await sendDiscordMessagesWithDelayforGlobal();
         await sendDiscordMessagesWithDelay();
         await delay(300000); // 5 minutes in milliseconds
         })
@@ -536,10 +873,9 @@ function getObjectWithHighestId(arr) {
   } 
   function scheduleServerStatusCheck() {
     checkserverstatus();
-    //console.log("Server status checked at:", new Date().toISOString());
   }
   
-  const FIFTEEN_MINUTES = 15 * 60 * 1000; // 15 minutes in milliseconds
+  const FIFTEEN_MINUTES = 2 * 60 * 1000; // 15 minutes in milliseconds
   
   // Start the periodic check
   setInterval(scheduleServerStatusCheck, FIFTEEN_MINUTES);
@@ -552,5 +888,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './client/build', 'index.html'));
 });
   app.listen(port, () => {
-  //console.log(`Server running on http://localhost:${port}`);
 });

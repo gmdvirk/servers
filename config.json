@@ -11,6 +11,18 @@
         "password": "}x{3S75DWQq6#",
         "database": "ci_badge"
       },
+      "dokcermysqlconnection":  {
+        "host": "localhost",
+        "port": 3306,
+        "user": "sonu",
+        "password": "90avq*9QD#0K",
+        "database": "ci_badge"
+      },
+      "globalserver":{
+        "id":39884592,
+        "label":"a_lora-server",
+        "hostid":"45.56.97.244"
+      },
       "token":"4fbd6f35046647701aebabba7f0aa8b75b2876e90ce41d3c8819a3329fb88bf0",
       "testpacketconfig":{
         "Eventnum": 0,
